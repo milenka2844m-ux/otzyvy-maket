@@ -110,13 +110,15 @@ a:hover .arr.dn{transform:rotate(90deg) translateX(3px)}
 .plat-tile{background:#fff;border-radius:var(--r);padding:32px 36px 26px;display:flex;flex-direction:column}
 .plat-tile .t{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:10px}
 .plat-tile h2{font-size:22px}
-/* без оценок и полосок: логотип, название с числом отзывов, стрелка */
-.prow{display:grid;grid-template-columns:40px minmax(0,1fr) 22px;align-items:center;gap:18px;padding:15px 0;border-top:1px solid #efefef;color:var(--ink)}
+/* без оценок и полосок: логотип, название с числом отзывов, короткая цитата с площадки (дословно, оценка 5), стрелка */
+.prow{display:grid;grid-template-columns:40px minmax(0,140px) minmax(0,1fr) 22px;align-items:center;gap:18px;padding:15px 0;border-top:1px solid #efefef;color:var(--ink)}
 .prow:first-of-type{border-top:0}
 .prow .ic{width:40px;height:40px;border-radius:11px;background:var(--bg);display:flex;align-items:center;justify-content:center}
 .prow .ic img{width:26px;height:26px;object-fit:contain}
 .prow .n b{display:block;font-weight:600;font-size:16px;line-height:1.25}
 .prow .n i{font-style:normal;font-size:13px;color:var(--muted)}
+.prow .q{font-size:14px;line-height:1.45;color:var(--text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.prow .q i{font-style:normal;font-size:12px;color:var(--muted);margin-left:8px;white-space:nowrap}
 .prow .arr{width:22px;color:#b9bdc6}
 .prow:hover .arr{color:var(--blue);transform:translateX(3px)}
 .plat-tile .note{margin-top:auto;padding-top:14px;font-size:13px;color:var(--muted)}
@@ -405,6 +407,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .hero{padding-top:24px}
   .hero h1{font-size:36px;padding-top:28px}
   .hero .lead{font-size:16px}
+  .prow{grid-template-columns:40px minmax(0,1fr) 22px}
+  .prow .q{display:none}
   .filt{grid-template-columns:minmax(0,1fr);padding:18px 18px 20px;gap:8px}
   .filt .lbl{margin-top:6px}
   .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -18px;padding:0 18px 4px;scrollbar-width:none}
@@ -532,11 +536,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
     <div class="plat-tile rv">
       <div class="t"><h2>На других площадках</h2></div>
-      <a class="prow" href="#reviews" data-go-s="g2"><span class="ic"><img src="assets/logo-2gis.png" alt=""></span><span class="n"><b>2ГИС</b><i>16 оценок</i></span><svg class="arr"><use href="#arr"/></svg></a>
-      <a class="prow" href="#reviews" data-go-s="gm"><span class="ic"><img src="assets/logo-google.png" alt=""></span><span class="n"><b>Google</b><i>37 отзывов</i></span><svg class="arr"><use href="#arr"/></svg></a>
-      <a class="prow" href="#reviews" data-go-s="zn"><span class="ic"><img src="assets/logo-zoon.png" alt=""></span><span class="n"><b>Zoon</b><i>47 оценок</i></span><svg class="arr"><use href="#arr"/></svg></a>
-      <a class="prow" href="#reviews" data-go-s="ot"><span class="ic"><img src="assets/logo-otzovik.png" alt=""></span><span class="n"><b>Отзовик</b><i>149 отзывов</i></span><svg class="arr"><use href="#arr"/></svg></a>
-      <a class="prow" href="#reviews" data-go-s="kl"><span class="ic"><img src="assets/logo-klerk.svg" alt=""></span><span class="n"><b>Клерк</b><i>14 отзывов</i></span><svg class="arr"><use href="#arr"/></svg></a>
+      <a class="prow" href="#reviews" data-go-s="g2"><span class="ic"><img src="assets/logo-2gis.png" alt=""></span><span class="n"><b>2ГИС</b><i>16 оценок</i></span><span class="q">«Хороший сервис, все прошло спокойно и понятно.»<i>Всеволод Бредков</i></span><svg class="arr"><use href="#arr"/></svg></a>
+      <a class="prow" href="#reviews" data-go-s="gm"><span class="ic"><img src="assets/logo-google.png" alt=""></span><span class="n"><b>Google</b><i>37 отзывов</i></span><span class="q">«Быстро связались! В течение недели оформили карту!»<i>Артем Жуков</i></span><svg class="arr"><use href="#arr"/></svg></a>
+      <a class="prow" href="#reviews" data-go-s="zn"><span class="ic"><img src="assets/logo-zoon.png" alt=""></span><span class="n"><b>Zoon</b><i>47 оценок</i></span><span class="q">«Заказывали карту Армении виртуальную, оформили за 1 день, все быстро и классно»<i>Екатерина Данилова</i></span><svg class="arr"><use href="#arr"/></svg></a>
+      <a class="prow" href="#reviews" data-go-s="ot"><span class="ic"><img src="assets/logo-otzovik.png" alt=""></span><span class="n"><b>Отзовик</b><i>149 отзывов</i></span><span class="q">«Заказал карту, через неделю уже открыли счет, а еще через день уже приехал пластик!»<i>ForestScout</i></span><svg class="arr"><use href="#arr"/></svg></a>
+      <a class="prow" href="#reviews" data-go-s="kl"><span class="ic"><img src="assets/logo-klerk.svg" alt=""></span><span class="n"><b>Клерк</b><i>14 отзывов</i></span><span class="q">«Написал в Телеграм ближе к ночи, думал, ответят утром, но ответили почти сразу.»<i>Станислав Божко</i></span><svg class="arr"><use href="#arr"/></svg></a>
       <p class="note">Нажмите на площадку, чтобы посмотреть ее отзывы ниже.</p>
     </div>
   </div>
